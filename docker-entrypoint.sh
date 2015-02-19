@@ -7,5 +7,6 @@ echo "WHOAMI is `whoami`"
 set -e
 
 mkdir -p /data/queue
+cp -a /etc/hosts /data/queue/etc/hosts
 /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
 
