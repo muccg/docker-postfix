@@ -1,0 +1,12 @@
+smtpd_banner = $myhostname ESMTP $mail_name (Debian/GNU)
+biff = no
+append_dot_mydomain = no
+readme_directory = no
+smtpd_use_tls=no
+smtpd_relay_restrictions = permit_mynetworks permit_sasl_authenticated defer_unauth_destination
+alias_maps = hash:/etc/aliases
+alias_database = hash:/etc/aliases
+mydestination = 
+relayhost = 
+mynetworks = 0.0.0.0/0
+inet_interfaces = all
