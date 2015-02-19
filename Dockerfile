@@ -12,8 +12,8 @@ RUN chmod 644 /etc/postfix/main.cf
 COPY ./supervisord.conf /etc/supervisor/supervisord.conf
 RUN chmod 644 /etc/supervisor/supervisord.conf
 
-COPY ./rsyslogd.conf /etc/rsyslogd.conf
-RUN chmod 644 /etc/rsyslogd.conf
+COPY ./rsyslog.conf /etc/rsyslog.conf
+RUN chmod 644 /etc/rsyslog.conf
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
