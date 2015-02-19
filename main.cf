@@ -10,3 +10,4 @@ mydestination =
 relayhost = 
 mynetworks = 0.0.0.0/0
 inet_interfaces = all
+queue_directory = /data/queue
