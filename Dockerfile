@@ -1,6 +1,6 @@
 #
 FROM muccg/base:debian8
-MAINTAINER ccg <ccgdevops@googlegroups.com>
+MAINTAINER ccg <devops@ccg.murdoch.edu.au>
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
   postfix supervisor rsyslog \
