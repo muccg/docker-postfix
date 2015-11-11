@@ -1,3 +1,5 @@
+myhostname = @MYHOSTNAME@
+mail_name = @MAILNAME@
 smtpd_banner = $myhostname ESMTP $mail_name (Debian/GNU)
 biff = no
 append_dot_mydomain = no

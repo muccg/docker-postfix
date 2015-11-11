@@ -1,5 +1,5 @@
 #
-FROM muccg/base:debian8
+FROM muccg/ubuntu14.04-base:latest
 MAINTAINER ccg <devops@ccg.murdoch.edu.au>
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
