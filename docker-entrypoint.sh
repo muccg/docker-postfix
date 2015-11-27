@@ -27,5 +27,4 @@ sed -i "s/@MYHOSTNAME@/$MYHOSTNAME/g" /etc/postfix/main.cf
 
 cat /etc/postfix/main.cf
 
-/usr/bin/supervisord -c /etc/supervisor/supervisord.conf
-
+exec /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
