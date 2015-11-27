@@ -27,4 +27,11 @@ sed -i "s/@MYHOSTNAME@/$MYHOSTNAME/g" /etc/postfix/main.cf
 
 cat /etc/postfix/main.cf
 
-exec /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
+if [ "$1" = 'postfix' ]; then
+    exec /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
+fi
+
+echo "[RUN]: Builtin command not provided [postfix]"
+echo "[RUN]: $@"
+
+exec "$@"

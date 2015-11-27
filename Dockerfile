@@ -1,10 +1,10 @@
 #
 FROM muccg/ubuntu14.04-base:latest
-MAINTAINER ccg <devops@ccg.murdoch.edu.au>
+MAINTAINER https://github.com/muccg
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
   postfix supervisor rsyslog \
-    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+  && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY ./main.cf /etc/postfix/main.cf
 RUN chmod 644 /etc/postfix/main.cf
@@ -21,4 +21,5 @@ RUN chmod +x /docker-entrypoint.sh
 EXPOSE 25
 VOLUME ["/data"]
 
-CMD /docker-entrypoint.sh
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["postfix"]
