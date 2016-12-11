@@ -1,15 +1,15 @@
 #!/bin/bash
 
 function defaults {
-    : ${MYHOSTNAME:="$HOSTNAME"}
-    : ${MAILNAME:="$HOSTNAME"}
+    : "${MYHOSTNAME:=${HOSTNAME}}"
+    : "${MAILNAME:=${HOSTNAME}}"
     export MYHOSTNAME
 }
 
 defaults
 
 echo "HOME is ${HOME}"
-echo "WHOAMI is `whoami`"
+echo "WHOAMI is $(whoami)"
 
 # any failures below here are considered fatal
 set -e
@@ -32,6 +32,6 @@ if [ "$1" = 'postfix' ]; then
 fi
 
 echo "[RUN]: Builtin command not provided [postfix]"
-echo "[RUN]: $@"
+echo "[RUN]: $*"
 
 exec "$@"
