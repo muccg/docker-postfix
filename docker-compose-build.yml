@@ -1,0 +1,21 @@
+version: '2'
+services:
+
+  dev:
+    build:
+      context: ./
+      args:
+        http_proxy:
+    image: muccg/postfix:${GIT_BRANCH}
+
+  latest:
+    extends:
+      file: docker-compose-build.yml
+      service: dev
+    image: muccg/postfix:latest
+
+  latest-date:
+    extends:
+      file: docker-compose-build.yml
+      service: dev
+    image: muccg/postfix:latest-${CCG_BUILD_DATE}
